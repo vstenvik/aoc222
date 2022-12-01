@@ -1,6 +1,4 @@
-﻿
-open System
-open System.Collections.Generic
+﻿open System
 open System.IO
 
 let example = """1000
@@ -18,16 +16,13 @@ let example = """1000
 
 10000"""
 
-let toInt (x:string) = match Int32.TryParse x with
-                        | true, i -> Some i
-                        | _ -> None
-let input = File.ReadAllLines "./Day1/input.txt"
+let toInt (x:string) = Int32.Parse x
+let input = File.ReadAllText "./Day1/input.txt"
 
 
-let list = List<List<string>>()
-list.Add(List())
-
-input
-|> Seq.iter (fun inp ->
-             if inp = "" then list.Add(List())
-             else )
+input.Split("\r\n\r\n")
+|> Array.map (fun str ->
+    str.Split("\r\n")
+    |> Array.map toInt
+    |> Seq.sum)
+|> Seq.max
