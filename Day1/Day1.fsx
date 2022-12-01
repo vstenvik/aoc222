@@ -25,4 +25,6 @@ input.Split("\r\n\r\n")
     str.Split("\r\n")
     |> Array.map toInt
     |> Seq.sum)
-|> Seq.max
+|> Seq.sortDescending
+|> Seq.take 3
+|> Seq.sum
