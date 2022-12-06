@@ -22,6 +22,9 @@
         <None Include="Day5\Day5.fsx" />
         <Content Include="Day5\example.txt" />
         <Content Include="Day5\input.txt" />
+        <None Include="Day6\Day6.fsx" />
+        <Content Include="Day6\example.txt" />
+        <Content Include="Day6\input.txt" />
     </ItemGroup>
 
 </Project>

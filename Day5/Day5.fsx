@@ -49,7 +49,7 @@ module MoveCmd =
 
 let updateAt n value list =
     list
-    |> List.mapi (fun i e -> if i = n then value else e)
+    |> Seq.mapi (fun i e -> if i = n then value else e)
 
 let move (stack: State) (move: MoveCmd) =
     let moving, rest = stack[move.from - 1]
